@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CareerBot Chat</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #00BCD4, #424242);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to CareerBot!</h2>
+    <p>Click the chat icon to explore your career options!</p>
+
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "1f81b181-2ed0-4974-b7d7-02e050423b98", // Your Integration ID
+        region: "au-syd", // Your Region
+        serviceInstanceID: "5413c079-73bd-450f-82fe-f5e1ff219494", // Your Service Instance ID
+        onLoad: async (instance) => { await instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
+          (window.watsonAssistantChatOptions.clientVersion || 'latest') + 
+          "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+</body>
+</html>
